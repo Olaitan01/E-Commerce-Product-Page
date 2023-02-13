@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: "Kumbh Sans", sans-serif;
+  
+}
+.logo img,.cart-icon img,.profile img {
+  max-width: 100%;
+  cursor: pointer;
+}
+.profile img{
+    width: 40%;
+    height: 40%;
+    padding: 0 0.5rem;
+}
+.header{
+    padding: 1rem 0;
+}
+header,
+.header-right,
+.header-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+nav{
+    display: flex;
+    padding: 0 1rem;
+}
+a{
+    margin: 0 0.5rem;
+    text-decoration: none;
+    color: hsl(220, 14%, 75%);
+}
+hr{
+    margin: 0 10%;
+}
+.cart-item {
+  display: none;
+}
+.product img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+}
