@@ -28,101 +28,103 @@
   </head>
   <body>
     <header>
-      <div class="header-left">
-        <div class="logo">
-          <img src="images/logo.svg" alt="sneakers icon" />
+      <div class="header-content">
+        <div class="header-left">
+          <div class="logo">
+            <img src="images/logo.svg" alt="sneakers icon" />
+          </div>
+          <div class="navigations">
+            <nav>
+              <a href="#"> Collections</a>
+              <a href="#"> Men</a>
+              <a href="#"> Women</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+            </nav>
+          </div>
         </div>
-        <div class="navigations">
-          <nav>
-            <a href="#"> Collections</a>
-            <a href="#"> Men</a>
-            <a href="#"> Women</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </nav>
+  
+        <div class="header-right">
+          <div class="cart-icon">
+            <img src="images/icon-cart.svg" alt="cart icon" />
+          </div>
+          <div class="profile">
+            <img src="images/image-avatar.png" alt="profile avatar" class="avatar"/>
+          </div>
+        </div>
+        <div class="cart-item">
+          <h3>Cart</h3>
+          <hr />
+          <div class="cart-row">
+            <span class="item-image"
+              ><img src="images/image-product-1-thumbnail.jpg" alt="shoe image" class="cart-image"
+            /></span>
+            <span class="item-title"
+              >Fall Limited Edition Sneakers
+              <span class="price"
+                >$125.00* <span class="item-quantity">3 </span>
+                <span class="total">$375.00 </span></span
+              ></span
+            >
+            <span class="remove"><img src="images/icon-delete.svg" alt="delete icon"> <span class="item-number"></span></span>
+          </div>
+          <button class="Checkout">Checkout</button>
         </div>
       </div>
-
-      <div class="header-right">
-        <div class="cart-icon">
-          <img src="images/icon-cart.svg" alt="cart icon" />
-        </div>
-        <div class="profile">
-          <img src="images/image-avatar.png" alt="profile avatar" />
-        </div>
-      </div>
-      <div class="cart-item">
-        <h4>Cart</h4>
-        <hr />
-        <div class="cart-row">
-          <span class="item-image"
-            ><img src="images/image-product-1-thumbnail.jpg" alt="shoe image"
-          /></span>
-          <span class="item-title"
-            >Fall Limited Edition Sneakers
-            <span class="price"
-              >$125.00* <span class="item-quantity">3 </span>
-              <span class="total">$375.00 </span></span
-            ></span
-          >
-          <span class="remove"><img src="images/icon-delete.svg" alt="delete icon"> <span class="item-number"></span></span>
-        </div>
-        <button class="Checkout">Checkout</button>
-      </div>
-      
+      <hr>
     </header>
-    <hr>
+    
 
     <main>
-      <div class="product">
+      <article class="product">
         <img src="images/image-product-1.jpg" alt="shoe image" />
         <div class="catalog">
           <span
-            ><img src="images/image-product-1-thumbnail.jpg" alt="shoe image"
+            ><img src="images/image-product-1-thumbnail.jpg" alt="shoe image" class="thumbnail"
           /></span>
           <span
-            ><img src="images/image-product-2-thumbnail.jpg" alt="shoe image"
+            ><img src="images/image-product-2-thumbnail.jpg" alt="shoe image" class="thumbnail"
           /></span>
           <span
-            ><img src="images/image-product-3-thumbnail.jpg" alt="shoe image"
+            ><img src="images/image-product-3-thumbnail.jpg" alt="shoe image" class="thumbnail"
           /></span>
           <span
-            ><img src="images/image-product-4-thumbnail.jpg" alt="shoe image"
+            ><img src="images/image-product-4-thumbnail.jpg" alt="shoe image" class="thumbnail"
           /></span>
         </div>
-      </div>
+      </article>
       <article>
         <div class="description">
           <h3>Sneaker Company</h3>
 
-          <h2>Fall Limited Edition Sneakers</h2>
+          <h2>Fall Limited Edition <span>Sneakers</span> </h2>
 
           <p>
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
+            These low-profile sneakers are your perfect casual wear <span> companion.
+            Featuring a durable rubber outer sole, they’ll </span> withstand everything
             the weather can offer.
           </p>
 
-          <div>
+          <div class="price-range">
             <span class="price"> $125.00</span>
             <span class="discount"> 50% </span>
           </div>
           <span class="original-price"> $250.00</span>
 
-          <div class="addtoCart-section">
+          <div class="addToCart-section">
             <div class="item-quantity">
               <span
                 ><button class="deduct-btn">
-                  <img src="images/icon-minus.svg" alt="minus icon" /></button
+                  <img src="images/icon-minus.svg" alt="minus icon" class="minus" /></button
               ></span>
               <span class="quantity">0</span>
               <span
                 ><button class="add-btn">
-                  <img src="images/icon-plus.svg" alt="plus icon" /></button
+                  <img src="images/icon-plus.svg" alt="plus icon" class="addition" /></button
               ></span>
             </div>
             <div>
-              <button class="addToCart-btn">Add to Cart</button>
+              <button class="addToCart-btn"><img src="images/icon-cart.svg" alt="cart-icon"> Add to Cart</button>
             </div>
           </div>
         </div>
