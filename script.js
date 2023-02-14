@@ -9,7 +9,6 @@ let itemPrice = document.querySelector(".item-price");
 let itemQuantity = document.querySelector(".itemQuantity");
 const carts = document.querySelector(".carts");
 
-let itemTotal = document.querySelector(".total");
 
 /**Add Cart Arithmentic */
 let quantityEl = parseInt(quantity.innerText);
@@ -19,12 +18,14 @@ deductBtn.addEventListener("click", reduceQuantity);
 function reduceQuantity() {
   num -= 1;
   quantity.innerText = quantityEl + num;
+  
 }
 addBtn.addEventListener("click", increaseQuantity);
 
 function increaseQuantity() {
   num += 1;
   quantity.innerText = quantityEl + num;
+  
 }
 
 /** Add to cart functionality */
@@ -38,7 +39,6 @@ function cartAdded() {
   let quantity = document.querySelector(".quantity").innerText;
   let quantityEl = parseInt(quantity);
   let imgSrc = document.querySelector(".shoe-thumbnail").src;
-  console.log(imgSrc, priceEl, quantityEl, title);
   cartLists(imgSrc, priceEl, quantityEl, title);
   updateTotal();
   
@@ -47,7 +47,7 @@ function cartAdded() {
 
 function cartLists(imgSrc, priceEl, quantityEl, title) {
   let cartrow = document.createElement("div");
-
+  cartrow.classList.add("cart-row") 
   cartrow.innerHTML = ` <div class="cart-row">
   
     <span class="item-image"
@@ -77,33 +77,24 @@ function cartLists(imgSrc, priceEl, quantityEl, title) {
   <button class="checkout">Checkout</button>
 </div>`;
   carts.append(cartrow);
-
+ 
   cartrow.querySelector(".remove").addEventListener("click", removeItem);
-  quantity.addEventListener("change",updateQuantity)
+  
 }
 
 /**update total when quantity is changed */
-function updateQuantity() {
-  if (isNaN(quantity.innerText) || quantity.innerText <= 0) {
-    quantity.innerText= 1
-    return
-  }
-  updateTotal()
-}
+
 
 /**Update total */
 function updateTotal() {
-  let itemPrice = document.querySelector(".item-price");
-  let priceEl = parseFloat(itemPrice.innerText.replace("$", " "));
-
-  let itemQuantity = document.querySelector(".itemQuantity");
-  let quantity = parseInt(itemQuantity.innerText);
-  console.log(typeof quantity);
-  let totalEl = priceEl * quantity;
-  const finalTotal = document.querySelector(".total");
-  finalTotal.innerText = `$${totalEl}`
+ let itemPrice=document.querySelector(".item-price").innerText
+ let price=parseFloat(itemPrice.replace("$",""))
+ let itemQuantity=document.querySelector(".itemQuantity").innerText
+ let quantity=parseInt(itemQuantity)
+ let totalEl= price * quantity
+let total=document.querySelector(".total")
+total.innerText=`$${totalEl}`
 }
-
 /**Remove Item functionality */
 
 let emptyCart = document.querySelector(".empty-cart");

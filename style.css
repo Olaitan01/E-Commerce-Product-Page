@@ -58,12 +58,13 @@ hr {
 }
 .cart-item {
     position: absolute;
-    border: 1px solid hsl(25, 100%, 94%);
+    border: 0.2rem solid hsl(25, 100%, 94%);
     background-color: hsl(25, 100%, 94%);
-    width: 40%;
-    top: 9%;
-    left:40%;;
+    width: 20%;
+    top: 10%;
+    left:63%;;
     border-radius: 0.5rem;
+    padding: 1rem;
  
 }
 .cart-item h3{
@@ -73,18 +74,59 @@ hr {
 }
 .cart-row{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    align-items:center;
+    justify-content: space-between;
+    gap: 0.5rem;
 
 }
 .cart-image{
-    max-width: 100%;
+    max-width: 50%;
     border-radius: 0.5rem;
 }
-.item-title,{
+.remove{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+.remove-img{
+    max-width: 200%;
+    
+}
+.checkout{
+    width: 100%;
+    background-color: hsl(26, 100%, 55%);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    color: hsl(0, 0%, 100%);
+}
+.item-info{
+    display: flex;
+    flex-direction: column;
+}
+.price-calc{
+    display: flex;
+}
+.item-info>span{
     font-size: 0.8rem;
 }
+.item-title,
+.item-price,
+.itemQuantity{
+    color: hsl(220, 14%, 75%);
+}
+
+.total,
+.price-calc{
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.empty-cart{
+    font-size: 0.8rem;
+    color: hsl(26, 100%, 55%);
+}
+
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -131,7 +173,7 @@ main {
   display: flex;
   gap: 1.5rem;
 }
-.item-quantity {
+.addToCart-section .item-quantity {
   background-color: hsl(223, 64%, 98%);
   padding: 0.2rem;
   display: flex;
