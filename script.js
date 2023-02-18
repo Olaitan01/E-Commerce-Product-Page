@@ -7,8 +7,18 @@ let itemTitle = document.querySelector(".item-title");
 let itemImage = document.querySelector(".cart-image");
 let itemPrice = document.querySelector(".item-price");
 let itemQuantity = document.querySelector(".itemQuantity");
+let cartBtn = document.querySelector(".cartBtn");
+let cartItem = document.querySelector(".cart-item");
+let emptyCart = document.querySelector(".empty-cart");
 const carts = document.querySelector(".carts");
-
+/**Cart Button */
+cartBtn.addEventListener("click", () => {
+  if (cartItem.classList.toggle(".active")) {
+    cartItem.style.display = "block";
+  } else {
+    cartItem.style.display = "none";
+  }
+});
 
 /**Add Cart Arithmentic */
 let quantityEl = parseInt(quantity.innerText);
@@ -33,6 +43,10 @@ function increaseQuantity() {
 addToCartBtn.addEventListener("click", cartAdded);
 
 function cartAdded() {
+  emptyCart.innerText = "";
+  let cartNum = document.querySelector(".cart-num");
+  num += 1;
+  cartNum.innerText = num;
   let title = document.querySelector(".title").innerText;
   let price = document.querySelector(".price").innerText;
   let priceEl = parseFloat(price.replace("$", ""));
@@ -41,13 +55,12 @@ function cartAdded() {
   let imgSrc = document.querySelector(".shoe-thumbnail").src;
   cartLists(imgSrc, priceEl, quantityEl, title);
   updateTotal();
-  
 }
-
 
 function cartLists(imgSrc, priceEl, quantityEl, title) {
   let cartrow = document.createElement("div");
-  cartrow.classList.add("cart-row") 
+  cartrow.classList.add(".cart-row");
+  
   cartrow.innerHTML = ` <div class="cart-row">
   
     <span class="item-image"
@@ -63,7 +76,7 @@ function cartLists(imgSrc, priceEl, quantityEl, title) {
         <span class="multiplication">*</span>
         <span class="itemQuantity">${quantityEl}</span>
       </span>
-      <span class="total"></span>
+      <span class="total">0</span>
     </div>
    
     <button class="remove">
@@ -77,28 +90,33 @@ function cartLists(imgSrc, priceEl, quantityEl, title) {
   <button class="checkout">Checkout</button>
 </div>`;
   carts.append(cartrow);
- 
-  cartrow.querySelector(".remove").addEventListener("click", removeItem);
+
+  
+  cartrow.querySelector(".remove").addEventListener("click",removeItem);
   
 }
 
 /**update total when quantity is changed */
 
-
 /**Update total */
 function updateTotal() {
- let itemPrice=document.querySelector(".item-price").innerText
- let price=parseFloat(itemPrice.replace("$",""))
- let itemQuantity=document.querySelector(".itemQuantity").innerText
- let quantity=parseInt(itemQuantity)
- let totalEl= price * quantity
-let total=document.querySelector(".total")
-total.innerText=`$${totalEl}`
+  let itemPrice = document.querySelector(".item-price").innerText;
+  let price = parseFloat(itemPrice.replace("$", ""));
+  let itemQuantity = document.querySelector(".itemQuantity").innerText;
+  let quantity = parseInt(itemQuantity);
+  let totalEl = price * quantity;
+  let total = document.querySelector(".total");
+  total.innerText = `$${totalEl}`;
 }
 /**Remove Item functionality */
 
-let emptyCart = document.querySelector(".empty-cart");
 function removeItem() {
-  carts.remove();
+  let cartRow=document.getElementsByClassName("cart-row")[0]
+    cartRow.remove()
+
+  
   emptyCart.innerText = "YOUR CART IS EMPTY";
+  let cartNum = document.querySelector(".cart-num");
+  num -= 1;
+  cartNum.innerText = num;
 }
