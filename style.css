@@ -63,7 +63,7 @@ hr {
 }
 .cart-num{
 position: absolute;
-top: 3.2%;
+top: 4%;
 right: 17.5%;
 color: hsl(26, 100%, 55%);
 font-size: 1rem;
@@ -81,8 +81,9 @@ font-size: 1rem;
  
 }
 .cart-item .active{
-    display: block;
+  display: block;
 }
+
 .cart-item h3{
     text-align: center;
     font-size: 1.5rem;
@@ -96,9 +97,10 @@ font-size: 1rem;
 
 }
 .cart-image{
-    max-width: 50%;
+    max-width: 80%;
     border-radius: 0.5rem;
 }
+
 .remove{
     border: none;
     background-color: inherit;
@@ -139,8 +141,9 @@ font-size: 1rem;
     font-weight: bolder;
 }
 .empty-cart{
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: hsl(26, 100%, 55%);
+    
 }
 
 main {
