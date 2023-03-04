@@ -125,17 +125,13 @@ let prevBtn = document.querySelector(".prev");
 let nextBtn = document.querySelector(".next");
 let closeModalBtn = document.querySelector(".close-modal");
 let modalContainer = document.querySelector(".modal-container");
-let openModal = document.querySelector(".open-modal")
+let openModal = document.querySelectorAll(".thumbnail")
 /**closeModal Btn Fuctions */
 closeModalBtn.addEventListener("click", () => {
   modalContainer.style.display = "none";
 });
 
-for (let i = 0; i < openModal.length; i++) {
-  openModal[i].addEventListener("click", () => {
-    console.log("hello");
-  });
-}
+
 
 let countIndex = 1;
 showIndex(countIndex);
