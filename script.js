@@ -125,7 +125,7 @@ let prevBtn = document.querySelector(".prev");
 let nextBtn = document.querySelector(".next");
 let closeModalBtn = document.querySelector(".close-modal");
 let modalContainer = document.querySelector(".modal-container");
-let openModal = document.querySelectorAll(".thumbnail")
+
 /**closeModal Btn Fuctions */
 closeModalBtn.addEventListener("click", () => {
   modalContainer.style.display = "none";
