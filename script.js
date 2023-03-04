@@ -120,6 +120,67 @@ function removeItem() {
   cartNum.innerText = num;
 }*/
 
+let thumbnail = document.querySelectorAll(".modal-thumbnail");
+let prevBtn = document.querySelector(".prev");
+let nextBtn = document.querySelector(".next");
+let closeModalBtn = document.querySelector(".close-modal");
+let modalContainer = document.querySelector(".modal-container");
+let openModal = document.querySelector(".open-modal")
+/**closeModal Btn Fuctions */
+closeModalBtn.addEventListener("click", () => {
+  modalContainer.style.display = "none";
+});
+
+for (let i = 0; i < openModal.length; i++) {
+  openModal[i].addEventListener("click", () => {
+    console.log("hello");
+  });
+}
+
+let countIndex = 1;
+showIndex(countIndex);
+/**Next */
+nextBtn.addEventListener("click", plusSlide);
+
+function plusSlide(n) {
+  n = 1;
+  showIndex((countIndex += n));
+}
+/**Prev */
+prevBtn.addEventListener("click", minusSlide);
+function minusSlide(n) {
+  n = 1;
+  showIndex((countIndex -= n));
+}
+
+/**Thumbnail Btn */
+for (let i = 0; i < thumbnail.length; i++) {
+  thumbnail[i].addEventListener("click", () => {
+    let n = [1, 2, 3, 4];
+    showIndex((countIndex = n[i]));
+  });
+}
+
+function showIndex(n) {
+  let i;
+  let slides = document.querySelectorAll(".modal-sneaker");
+  let dot = document.querySelectorAll(".modal-thumbnail");
+  if (n > slides.length) {
+    countIndex = 1;
+  }
+  if (n < 1) {
+    countIndex = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dot.length; i++) {
+    dot[i].className = dot[i].className.replace("active", "");
+  }
+  slides[countIndex - 1].style.display = "block";
+  dot[countIndex - 1].className += "active";
+}
+
 /**Quantity Arithmetic */
 const quantity = document.querySelector(".quantity");
 let num = 0;
@@ -128,7 +189,7 @@ incrementBtn.addEventListener("click", increment);
 function increment() {
   num += 1;
   quantity.innerText = num;
-  quantityUpdate()
+  quantityUpdate();
 }
 
 const decrementBtn = document.querySelector(".deduct-btn");
@@ -136,22 +197,19 @@ decrementBtn.addEventListener("click", decrement);
 function decrement() {
   num -= 1;
   quantity.innerText = num;
-  quantityUpdate()
-  
+  quantityUpdate();
 }
 
 /**Show cart item when the cart icon is clicked */
-let cartBtn=document.querySelector(".cartBtn")
-let cartItemEl=document.querySelector(".cart-item")
-cartBtn.addEventListener("click",()=>{
-  if(cartItemEl.classList.toggle("active")){
-    cartItemEl.style.display="block"
-  }else{
-    cartItemEl.style.display="none"
+let cartBtn = document.querySelector(".cartBtn");
+let cartItemEl = document.querySelector(".cart-item");
+cartBtn.addEventListener("click", () => {
+  if (cartItemEl.classList.toggle("active")) {
+    cartItemEl.style.display = "block";
+  } else {
+    cartItemEl.style.display = "none";
   }
-})
-
-
+});
 
 /**Add to cart */
 const addToCartBtn = document.querySelector(".addToCart-btn");
@@ -161,7 +219,7 @@ function addToCart() {
   let quantity = document.querySelector(".quantity").innerText;
   let title = document.querySelector(".title").innerText;
   let imgSrc = document.querySelector("#sneaker-thumbnail").src;
- 
+
   itemAddedToCart(price, quantity, title, imgSrc);
   updateTotal();
 }
@@ -169,14 +227,14 @@ function addToCart() {
 function itemAddedToCart(price, quantity, title, imgSrc) {
   let cart = document.querySelector(".cart-item");
   const cartRow = document.createElement("div");
-  cartRow.classList.add(".cart-row")
-  
-  let cartItemQuantityIndication=document.querySelector(".cart-num")
-  let num=0
-  num+=1
-  cartItemQuantityIndication.innerText=num
-  let cartEmpty=document.querySelector(".empty-cart")
-  cartEmpty.innerText=" "
+  cartRow.classList.add(".cart-row");
+
+  let cartItemQuantityIndication = document.querySelector(".cart-num");
+  let num = 0;
+  num += 1;
+  cartItemQuantityIndication.innerText = num;
+  let cartEmpty = document.querySelector(".empty-cart");
+  cartEmpty.innerText = " ";
 
   cartRow.innerHTML = ` <div class="cartRow">
   <div class="cart-row">
@@ -210,10 +268,8 @@ function itemAddedToCart(price, quantity, title, imgSrc) {
 </div>
 `;
 
-  
   cart.append(cartRow);
   cart.querySelector(".remove").addEventListener("click", remove);
- 
 }
 
 /**cart number increment */
@@ -238,21 +294,20 @@ function updateTotal() {
 }
 
 /**Quantity update */
-function quantityUpdate(){
-  if(isNaN(quantity.innerText)||quantity.innerText<=0){
-    quantity.innerText=1
-    return
+function quantityUpdate() {
+  if (isNaN(quantity.innerText) || quantity.innerText <= 0) {
+    quantity.innerText = 1;
+    return;
   }
 }
-
 
 /**remove item */
 function remove() {
   let cartRow = document.querySelector(".cartRow").remove();
-  let cartEmpty=document.querySelector(".empty-cart")
-  cartEmpty.innerText="Your cart is empty"
-  let cartItemQuantityIndication=document.querySelector(".cart-num")
-  
-  num-=1
-  cartItemQuantityIndication.innerText=num
+  let cartEmpty = document.querySelector(".empty-cart");
+  cartEmpty.innerText = "Your cart is empty";
+  let cartItemQuantityIndication = document.querySelector(".cart-num");
+
+  num -= 1;
+  cartItemQuantityIndication.innerText = num;
 }
