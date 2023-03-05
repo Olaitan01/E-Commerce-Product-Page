@@ -126,6 +126,22 @@ let nextBtn = document.querySelector(".next");
 let closeModalBtn = document.querySelector(".close-modal");
 let modalContainer = document.querySelector(".containerr");
 let openModalBtn=document.querySelectorAll(".thumbnail")
+let openMenuBtn=document.querySelector(".open-icon")
+let closeMenuBtn=document.querySelector(".close-icon")
+let HamburgerBtn=document.querySelector(".hamburger-Btn")
+let menuNav=document.querySelector(".navigations")
+/**Hamburger menu */
+HamburgerBtn.addEventListener("click",()=>{
+  if(menuNav.style.display==="none"){
+    menuNav.style.display="block"
+    openMenuBtn.style.display="none"
+    closeMenuBtn.style.display="block"
+  }else{
+    menuNav.style.display="none"
+    openMenuBtn.style.display="block"
+    closeMenuBtn.style.display="none"
+  }
+})
 
 /**closeModal Btn Fuctions */
 closeModalBtn.addEventListener("click", () => {
@@ -227,17 +243,18 @@ function addToCart() {
 }
 
 function itemAddedToCart(price, quantity, title, imgSrc) {
-  let cart = document.querySelector(".cart-item");
+ 
   const cartRow = document.createElement("div");
   cartRow.classList.add(".cart-row");
-
+  let cart = document.querySelector(".cart-item");
+  
   let cartItemQuantityIndication = document.querySelector(".cart-num");
   let num = 0;
   num += 1;
   cartItemQuantityIndication.innerText = num;
   let cartEmpty = document.querySelector(".empty-cart");
   cartEmpty.innerText = " ";
-
+  
   cartRow.innerHTML = ` <div class="cartRow">
   <div class="cart-row">
   

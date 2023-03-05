@@ -158,6 +158,7 @@ main {
 .thumbnail {
   width: 17%;
   height: 18%;
+  cursor: pointer;
 }
 .price-range {
   display: flex;
@@ -195,9 +196,12 @@ main {
   text-align: center;
   gap: 0.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+  
 }
 .minus {
   transform: translateY(-3px);
+
 }
 .item-quantity button {
   outline: none;
@@ -246,13 +250,13 @@ main {
 /*Modal styling**/
 .containerr{
   display: none;
+  
 }
 .modal-container {
   position: absolute;
   width: 100%;
   background-color: hsla(0, 0%, 0%,0.8);
   height: 100vh;
-  width: 100%;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -332,5 +336,124 @@ main {
   }
   to {
     opacity: 1;
+  }
+}
+
+/*Mobile View**/
+
+
+@media screen and (max-width:600px) {
+  
+  header{
+    width: 100%;
+    padding: 0.5rem 0rem;  
+  }
+  
+  .header-left{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+
+  
+  .navigations{
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    height: 50rem;
+    inset: 0rem 8rem 0rem 0rem;
+    display: none;
+
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0rem;
+  }
+  nav a{
+    padding: 1rem 0rem;
+    color: black;
+  }
+  
+  .hamburger-menu{
+    z-index: 1;
+    padding: 1rem;
+  }
+  .hamburger-Btn{
+    background-color: inherit;
+    border: none;
+    max-width: 100%;
+  }
+  .close-icon{
+    display: none;
+  }
+  .cart-item{
+    width: 90%;
+    margin: auto;
+    height: 40vh;
+    left: 0;
+    right: 0;
+    border: none;
+  }
+  .cart-item h3 {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .empty-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: hsl(0, 0%, 0%,0.8);
+  }
+
+  .cart-item>hr{
+    display: block;
+  }
+  hr{
+    display: none;
+  }
+  main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    
+  }
+  .product img{
+    max-width: 100%;
+    border-radius: 0%;
+  }
+  .thumbnail{
+    display: none;
+  }
+  .description{
+    padding-top: 1rem;
+    width: 90%;
+    margin: auto;
+  }
+  .description p{
+    display: initial;
+    
+  }
+  .addToCart-section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .item-quantity{
+    width: 100%;
+    display: flex;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    
+    
+  }
+  .item-quantity button{
+    padding: 1rem;
+  }
+  .addToCart-btn{
+    width: 100%; 
   }
 }
