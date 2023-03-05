@@ -310,6 +310,6 @@ function remove() {
   cartEmpty.innerText = "Your cart is empty";
   let cartItemQuantityIndication = document.querySelector(".cart-num");
 
-  num -= 1;
+  num = cartItemQuantityIndication.innerText - 1;
   cartItemQuantityIndication.innerText = num;
 }
