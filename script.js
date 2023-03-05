@@ -124,12 +124,18 @@ let thumbnail = document.querySelectorAll(".modal-thumbnail");
 let prevBtn = document.querySelector(".prev");
 let nextBtn = document.querySelector(".next");
 let closeModalBtn = document.querySelector(".close-modal");
-let modalContainer = document.querySelector(".modal-container");
+let modalContainer = document.querySelector(".containerr");
+let openModalBtn=document.querySelectorAll(".thumbnail")
 
 /**closeModal Btn Fuctions */
 closeModalBtn.addEventListener("click", () => {
   modalContainer.style.display = "none";
 });
+for(let i=0;i<openModalBtn.length;i++){
+  openModalBtn[i].addEventListener("click",()=>{
+    modalContainer.style.display="block"
+  })
+}
 
 
 
