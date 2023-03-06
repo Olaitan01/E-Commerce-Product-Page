@@ -132,14 +132,14 @@ let HamburgerBtn=document.querySelector(".hamburger-Btn")
 let menuNav=document.querySelector(".navigations")
 /**Hamburger menu */
 HamburgerBtn.addEventListener("click",()=>{
-  if(menuNav.style.display==="none"){
-    menuNav.style.display="block"
-    openMenuBtn.style.display="none"
-    closeMenuBtn.style.display="block"
-  }else{
+  if(menuNav.style.display==="block"){
     menuNav.style.display="none"
     openMenuBtn.style.display="block"
     closeMenuBtn.style.display="none"
+  }else{
+    menuNav.style.display="block"
+    openMenuBtn.style.display="none"
+    closeMenuBtn.style.display="block"
   }
 })
 

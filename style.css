@@ -326,6 +326,9 @@ main {
   width: 150%;
   
 }
+.hamburger-Btn{
+  display: none;
+}
 .fade {
   animation-name: fade;
   animation-duration: 0.4s;
@@ -369,7 +372,7 @@ main {
   nav{
     display: flex;
     flex-direction: column;
-    padding: 3rem 0rem;
+    padding: 4rem 0rem;
   }
   nav a{
     padding: 1rem 0rem;
@@ -379,11 +382,14 @@ main {
   .hamburger-menu{
     z-index: 1;
     padding: 1rem;
+    
   }
   .hamburger-Btn{
     background-color: inherit;
     border: none;
     max-width: 100%;
+    cursor: pointer;
+    display: block;
   }
   .close-icon{
     display: none;
@@ -421,6 +427,7 @@ main {
     gap: 0.5rem;
     
   }
+  
   .product img{
     max-width: 100%;
     border-radius: 0%;
