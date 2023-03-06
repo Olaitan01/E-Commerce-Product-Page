@@ -378,6 +378,12 @@ main {
     padding: 1rem 0rem;
     color: black;
   }
+  nav a:hover{
+    text-decoration: line-through;
+    border: none;
+    animation-name: fade;
+    animation-duration: 2s ease-in;
+  }
   
   .hamburger-menu{
     z-index: 1;
@@ -410,7 +416,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    padding: 3rem;
     color: hsl(0, 0%, 0%,0.8);
   }
 
